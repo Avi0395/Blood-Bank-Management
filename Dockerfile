@@ -1,17 +1,17 @@
-# Use the official PHP image from Docker Hub
+# Use PHP 8.0 with Apache
 FROM php:8.0-apache
 
-# Enable mod_rewrite (needed for some PHP frameworks)
+# Enable URL rewriting
 RUN a2enmod rewrite
 
-# Set the working directory inside the container
+# Set working directory
 WORKDIR /var/www/html
 
-# Copy your code into the container
+# Copy all your files inside container
 COPY . /var/www/html/
 
-# Expose port 80 to the outside world
+# Expose Apache default port
 EXPOSE 80
 
-# Set the entry point for the container to Apache
+# Start Apache server
 CMD ["apache2-foreground"]
