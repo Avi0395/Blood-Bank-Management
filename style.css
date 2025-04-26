@@ -1,0 +1,200 @@
+/* Base styles - will only apply where Bootstrap isn't overriding */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-image: url('OIP (1).jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    color: #333;
+    min-height: 100vh;
+}
+
+/* Custom Bootstrap Overrides and Extensions */
+.navbar-blood {
+    background: linear-gradient(to right, #d62839, #e63946);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.card {
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.12);
+}
+
+.card-header {
+    background: linear-gradient(to right, #d62839, #e63946);
+    color: white;
+    font-weight: 600;
+    border: none;
+    padding: 15px 20px;
+}
+
+.btn-blood {
+    background: linear-gradient(to right, #d62839, #e63946);
+    border: none;
+    color: white;
+    font-weight: 600;
+    padding: 10px 20px;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+.btn-blood:hover {
+    background: linear-gradient(to right, #c21d2e, #d62839);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(230, 57, 70, 0.4);
+}
+
+/* Table styling */
+.table-blood {
+    border-collapse: separate;
+    border-spacing: 0;
+    width: 100%;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+}
+
+.table-blood thead th {
+    background-color: #f8d7da;
+    color: #721c24;
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 0.85rem;
+    letter-spacing: 0.5px;
+    padding: 12px 15px;
+}
+
+.table-blood tbody tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+.table-blood td {
+    padding: 12px 15px;
+    vertical-align: middle;
+    border-top: 1px solid #f2f2f2;
+}
+
+.table-blood tbody tr:hover {
+    background-color: #fff8f8;
+}
+
+/* Form controls */
+.form-control-blood {
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    padding: 12px 15px;
+    transition: all 0.3s ease;
+}
+
+.form-control-blood:focus {
+    border-color: #e63946;
+    box-shadow: 0 0 0 0.2rem rgba(230, 57, 70, 0.25);
+}
+
+/* Blood type badges */
+.badge-blood-type {
+    font-size: 0.85rem;
+    font-weight: 600;
+    padding: 5px 10px;
+    border-radius: 30px;
+}
+
+.badge-a-positive { background-color: #ffc107; color: #212529; }
+.badge-a-negative { background-color: #fd7e14; color: white; }
+.badge-b-positive { background-color: #20c997; color: white; }
+.badge-b-negative { background-color: #0dcaf0; color: white; }
+.badge-ab-positive { background-color: #6f42c1; color: white; }
+.badge-ab-negative { background-color: #6610f2; color: white; }
+.badge-o-positive { background-color: #198754; color: white; }
+.badge-o-negative { background-color: #dc3545; color: white; }
+
+/* Animations */
+.fade-in {
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Legacy support for your existing #full, #inner_full structure */
+#full {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+#inner_full {
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+    width: 100%;
+    max-width: 800px;
+    overflow: hidden;
+}
+
+#header {
+    background: linear-gradient(to right, #d62839, #e63946);
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+#body1 {
+    padding: 30px;
+}
+
+#footer {
+    background-color: #f8f9fa;
+    color: #6c757d;
+    padding: 15px;
+    text-align: center;
+    border-top: 1px solid #eee;
+}
+
+/* Fix for links */
+a.btn-blood {
+    text-decoration: none;
+    display: inline-block;
+}
+
+a.blood-link {
+    color: #e63946;
+    transition: all 0.3s ease;
+    text-decoration: none;
+}
+
+a.blood-link:hover {
+    color: #d62839;
+    text-decoration: underline;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    #inner_full {
+        width: 95%;
+    }
+    
+    .table-responsive {
+        overflow-x: auto;
+    }
+}
